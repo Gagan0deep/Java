@@ -47,7 +47,7 @@ public class s2 extends HttpServlet {
             out.println("<div style='background-color:silver'><br/></div>");
             out.println("<div style='background-color:red;padding-top:-10px;'><br/></div>");
             out.println("<style>"
-                    + "body{ max-width:960px;margin-left:auto;margin-right:auto;background-color:black;}"
+                    + "body{ max-width:1200px;margin-left:auto;margin-right:auto;background-color:black;}"
                     +"#header{ background-color:silver;float:left;}"
                     + "ul li{ list-style-type:none;display:inline-block;margin-top:30px;background-color:red;padding:6px;}"
                     + "ul{ float:right;margin:0px;padding:0px;overflow:hidden;}"
@@ -60,7 +60,7 @@ public class s2 extends HttpServlet {
                     + ".p5{color:gold;font-weight:bold;}"
                     + "</style>");
             //out.println("<h1>Servlet s1 at " + request.getContextPath() + "</h1>");
-            out.println("<p style='color:gray;transform:translate(476px,-53px);'><span style='color:red'>Contact:</span> xyz@gmail.com;</p> <p  style='color:gray;transform:translate(650px,-86px);'><span style='color:red'/>Ph.</span> 0123456789</p>");
+            out.println("<p style='color:gray;transform:translate(706px,-53px);'><span style='color:red'>Contact:</span> xyz@gmail.com;</p> <p  style='color:gray;transform:translate(880px,-86px);'><span style='color:red'/>Ph.</span> 0123456789</p>");
             out.println("</body>");
             out.println("</html>");
         }
