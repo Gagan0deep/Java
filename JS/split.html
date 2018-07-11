@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head><title>Welcome</title></head>
+<body style="background-color:black; color:white">
+<form name="f1">
+<table border="1px solid" style="border-color:red">
+<tr>
+<td colspan="2"><label>Enter Ph no.</label> <input type="text" name="t1"  size="36px" placeholder="Enter the Phone number"/></td>
+</tr>
+<tr>
+<td><input type="text" name="t2" size="12px" /></td>
+<td><input type="text" name="t3" size="29px"/></td>
+</tr>
+<tr>
+<td colspan="2"><input type="button" value="split" onclick="splite()" style="width:100%"/></td>
+</tr>
+</table>
+</form>
+<script type="text/javascript">
+function splite()
+{
+var a=document.f1.t1.value;
+
+if(a==""){
+window.alert("Error:field is not declared...!");
+}
+else if(a.toString().length >=11){
+window.alert("Error:Phone Number should not exceed the count of 10 numbers");
+}
+else{
+var a=document.f1.t1;
+var b=document.f1.t2;
+var c=document.f1.t3;
+b.value=a.value.slice(0,3);
+c.value=a.value.slice(3,10);
+}
+}
+</script>
+<style>
+label{
+font-weight:bold;
+}
+table{
+margin-left:450px;
+margin-top:200px;
+}
+input[type="text"]{
+padding:10px;
+}
+input[type="button"]{
+background-color:red;
+font-size:17px;
+cursor:pointer;
+padding:10px;
+color:white;
+}
+input[type="button"]:hover{
+background-color:tomato;
+font-weight:bold;
+}
+
+</style>
+</body>
+</html>
