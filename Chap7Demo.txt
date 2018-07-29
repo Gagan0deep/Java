@@ -1,0 +1,77 @@
+MVC
+---
+index.html
+-----
+<form action="LoginServlet" method="post">  
+Name:<input type="text" name="name"><br>  
+Password:<input type="password" name="password"><br>  
+<input type="submit" value="login">  
+..........................
+LoginServlet
+-----------
+PrintWriter out=response.getWriter();  
+          
+        String name=request.getParameter("name");  
+        String password=request.getParameter("password");  
+          
+        LoginBean bean=new LoginBean();  
+        bean.setName(name);  
+        bean.setPassword(password);  
+        request.setAttribute("bean",bean);  
+          
+        boolean status=bean.validate();  
+          
+        if(status){  
+            RequestDispatcher rd=request.getRequestDispatcher("login-success.jsp");  
+            rd.forward(request, response);  
+        }  
+        else{  
+            RequestDispatcher rd=request.getRequestDispatcher("index.html");  
+            out.println("Invalidate name and password");
+            rd.include(request, response);  
+        }  
+------------------------------------------
+LoginBean(POJO)
+--------------
+ private String name,password;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public boolean validate(){  
+    if(password.equals("admin")){  
+        return true;  
+    }  
+    else{  
+        return false;  
+    }  
+    }
+----------------------------
+login-success
+------------
+    <%@page import="com.niit.LoginBean"%>  
+  
+<p>You are successfully logged in!</p>  
+<%  
+LoginBean bean=(LoginBean)request.getAttribute("bean");  
+out.print("Welcome, "+bean.getName());  
+%>     <h1>Hello World!</h1>
+-------------------------
+
+we can create login-error.jsp and give like below
+------------------------------------------------
+
+<p>Sorry! username or password error</p>  
+<%@ include file="index.jsp" %>  

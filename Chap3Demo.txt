@@ -1,0 +1,133 @@
+//Validation Servlet--forward
+
+String user=request.getParameter("username");
+        String password=request.getParameter("password");
+        if(user.equals("Ram")&&(password.equals("123456")))
+        {
+            RequestDispatcher dis=getServletContext().getRequestDispatcher("/WelcomeServlet");
+            dis.forward(request, response);
+        }
+        else
+        {
+            RequestDispatcher dis=getServletContext().getRequestDispatcher("/ErrorServlet");
+            dis.forward(request, response); 
+        }
+//include
+
+ PrintWriter out=response.getWriter();
+        String user=request.getParameter("username");
+        String password=request.getParameter("password");
+        if(user.equals("ram")&&(password.equals("123456")))
+        {
+            RequestDispatcher dis=getServletContext().getRequestDispatcher("/WelcomeServlet");
+            dis.forward(request, response);
+        }
+
+
+        else
+        {
+            RequestDispatcher dis=getServletContext().getRequestDispatcher("/index.html");
+            out.println("Invalid User");
+            dis.include(request, response); 
+        }
+//request.setAttribute& getAttribute
+
+PrintWriter out=response.getWriter();
+        String user=request.getParameter("username");
+        String password=request.getParameter("password");
+        if(user.equals("ram")&&(password.equals("123456")))
+        {
+            request.setAttribute("user", user);
+            RequestDispatcher dis=getServletContext().getRequestDispatcher("/WelcomeServlet");
+            dis.forward(request, response);
+        }
+        else
+        {
+            RequestDispatcher dis=getServletContext().getRequestDispatcher("/index.html");
+            out.println("Invalid User");
+            dis.include(request, response); 
+        }
+**********Filter Logging**********
+In filter: doFilter()
+String remoteAddress =  request.getRemoteAddr();
+  String uri = ((HttpServletRequest) request).getRequestURI();
+  String protocol = request.getProtocol();
+
+  chain.doFilter(request, response);
+  filterConfigObj.getServletContext().log("Logging 
+Filter Servlet called");
+    filterConfigObj.getServletContext().log("*******
+*******************");
+  filterConfigObj.getServletContext().log("User 
+Logged ! " + User IP: " + remoteAddress + 
+   " Resource File: " + uri + " 
+Protocol: " + protocol);
+
+In HTML:
+<html>
+   <head>
+   <title>Logging Filter Example</title>
+   </head>
+  <body>
+  <h1>Logging Filter</h1>
+  This filter writes log file of Tomcat Web Server.
+  <hr>
+   See log file of Web server.
+  <br>
+  </body>
+</html>
+web.xml:
+<filter>
+   <filter-name>LoggingFilterExample</filter-name>
+  <filter-class>LoggingFilterExample</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>LoggingFilterExample</filter-name>
+  <url-pattern>/logging.jsp</url-pattern>
+  </filter-mapping>
+
+----------Authenticate Filter----------
+<form action="servlet1">  
+Name:<input type="text" name="name"/><br/>  
+Password:<input type="password" name="password"/><br/>  
+  
+<input type="submit" value="login">  
+  
+</form>  
+-----doFilter()---------
+ PrintWriter out=resp.getWriter();  
+          
+    String password=req.getParameter("password");  
+    if(password.equals("admin")){  
+    chain.doFilter(req, resp);//sends request to next resource  
+    }  
+    else{  
+    out.print("username or password error!");  
+    RequestDispatcher rd=req.getRequestDispatcher("index.html");  
+    rd.include(req, resp);  
+    }  
+---------Servlet doGet()-------
+ response.setContentType("text/html");  
+        PrintWriter out = response.getWriter();  
+          
+        out.print("welcome ADMIN");  
+        out.close();  
+--------Web.xml----------
+<servlet>  
+    <servlet-name>AdminServlet</servlet-name>  
+    <servlet-class>AdminServlet</servlet-class>  
+  </servlet>  
+  
+  <servlet-mapping>  
+    <servlet-name>AdminServlet</servlet-name>  
+    <url-pattern>/servlet1</url-pattern>  
+  </servlet-mapping>  
+    
+ <filter>  
+  <filter-name>f1</filter-name>  
+  <filter-class>MyFilter</filter-class>  
+  </filter>  
+  <filter-mapping>  
+  <filter-name>f1</filter-name>  
+  <url-pattern>/servlet1</url-pattern>  
+  </filter-mapping>  

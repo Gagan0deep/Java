@@ -1,0 +1,38 @@
+---------Update-------
+EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
+      
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( ).begin( );
+      Employee employee = entitymanager.find( Employee.class, 1201 );
+      
+      //before update
+      System.out.println( employee );
+      employee.setSalary( 46000 );
+      entitymanager.getTransaction( ).commit( );
+      
+      //after update
+      System.out.println( employee );
+      entitymanager.close();
+      emfactory.close();
+
+-------Find-------------------
+EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
+      EntityManager entitymanager = emfactory.createEntityManager();
+      Employee employee = entitymanager.find( Employee.class, 1201 );
+
+      System.out.println("employee ID = " + employee.getEid( ));
+      System.out.println("employee NAME = " + employee.getEname( ));
+      System.out.println("employee SALARY = " + employee.getSalary( ));
+      System.out.println("employee DESIGNATION = " + employee.getDeg( ));
+
+------delete-----------
+
+EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( ).begin( );
+      
+      Employee employee = entitymanager.find( Employee.class, 1201 );
+      entitymanager.remove( employee );
+      entitymanager.getTransaction( ).commit( );
+      entitymanager.close( );
+      emfactory.close( );

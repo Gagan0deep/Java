@@ -1,0 +1,205 @@
+---Page Directive----
+--import--
+<%@ page import="java.util.Date" %>  
+        Today is: <%= new Date() %>  
+--info---
+<%@ page info="composed by Sonoo Jaiswal" %>  
+        Today is: <%= new java.util.Date() %> 
+------------------------------------------ 
+getServletinfo will be created in servlet
+--error---
+
+<%@ page errorPage="myerrorpage.jsp" %>  
+  
+ <%= 100/0 %>  
+---Include Directive----
+<%@ include file="index.html" %>  	
+---TagLib-------
+.jsp
+----
+ <%@ taglib uri="WEB-INF/tlds/Login.tld" prefix="login" %>
+   <login:MyLogin/>
+.tld(taglibrdesc)
+----
+<tag>
+ <name>MyLogin</name>
+ <tag-class>com.niit.LoginHandler</tag-class>
+ <body-content>empty</body-content>
+ </tag>
+----------
+.java(TagHandler)
+------
+ out.println("<html>");
+            out.println("<body>");
+            out.println(" <label for=\"uname\"><b>Username</b></label>");
+            out.println("<input type='text' name='uname'>");
+            out.println("<br/><br/>");
+             out.println(" <label for=\"uname\"><b>Password</b></label>");
+            out.println("<input type='text' name='uname'>");
+             out.println("<br/><br/>");
+            out.println("<input type='submit' value='Login'>");
+             out.println("</body>");
+             out.println("</html>");
+*********************************************************************************
+--JSP Declaration--
+to display data
+----------------
+<%! int data=50; %>  
+<%= "Value of the variable is:"+data %>  
+-------------------------------------
+to sum
+------
+ <%!   
+  int add(int a,int b){  
+      return a+b;  
+    }  %>  
+<%= "Sum  is:"+add(3,5) %>  
+-----------------------------
+to cube
+------
+<%!   
+int cube(int n){  
+return n*n*n*;  
+}  
+%>  
+<%= "Cube of 3 is:"+cube(3) %> 
+*****************************************************************
+--JSP Expression---
+<h1>The product of 6 and 3 is : <%=(6*3) %></h1>
+---------------------------------------------------
+.html or .jsp
+-------------
+ <form action="welcome.jsp">  
+<input type="text" name="uname"><br/>  
+<input type="submit" value="go">  
+</form>  
+-----------
+welcome.jsp
+-----------
+  <%= "Welcome "+request.getParameter("uname") %>  
+***********************************************************************
+---JSP Scriptlet---------
+ <% int i=10;
+            if(i>0)
+            {
+                out.println("i is positive");
+            }
+            else
+            {
+                out.println("i is negative");
+            }%>
+*****************************************************************		
+----JSP Action---
+forward & include
+---------------
+<h2>this is index page</h2>  
+  
+<jsp:forward page="welcome.jsp" />  or <jsp:include page="welcome.jsp" />  
+  
+<h2>end section of index page</h2> 
+-----------------------------------------------
+Syntax of usebean
+--------------------
+<jsp:useBean id= "instanceName" scope= "page | request | session | application"   
+class= "packageName.className" type= "packageName.className"  
+beanName="packageName.className | <%= expression >" >  
+</jsp:useBean>  
+usebean
+-------
+.jsp
+----
+<jsp:useBean id="obj" class="com.niit.add"/>  
+<%
+    int m=obj.add(5,3);
+    out.print("Sum is "+m);
+    %>
+--------------------------------
+.java(POJO)
+----------
+  public int add(int a,int b)
+    {
+    return a+b;
+    }
+---------------------------------
+gettersetter
+------------
+.jsp
+-----------
+<jsp:useBean id="u" class="com.niit.add"/>  
+<jsp:setProperty property="id" value="101" name="u"/>  
+<jsp:getProperty property="id" name="u"/><br>  
+-------------------
+.java(POJO)
+-----------
+int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+***********************************************
+Implicit
+--------
+Request
+------
+.html
+-----
+<form action="welcome.jsp">  
+<input type="text" name="uname">  
+<input type="submit" value="go"><br/>  
+</form> 
+.jsp
+----
+<%   
+String name=request.getParameter("uname");  
+out.print("welcome "+name);  
+%> 
+Response
+--------
+<%   
+response.sendRedirect("http://www.google.com");  
+%>  
+---------------------------------
+session
+-------
+<html>  
+<body>  
+<form action="welcome.jsp">  
+<input type="text" name="uname">  
+<input type="submit" value="go"><br/>  
+</form>  
+</body>  
+</html> 
+----------------
+welcome.jsp
+------------
+<html>  
+<body>  
+<%   
+  
+String name=request.getParameter("uname");  
+out.print("Welcome "+name);  
+  
+session.setAttribute("user",name);  
+  
+<a href="second.jsp">second jsp page</a>  
+  
+%>  
+</body>  
+</html>  
+---------
+second.jsp
+---------
+<html>  
+<body>  
+<%   
+  
+String name=(String)session.getAttribute("user");  
+out.print("Hello "+name);  
+  
+%>  
+</body>  
+</html>  

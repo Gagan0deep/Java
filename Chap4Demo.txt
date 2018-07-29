@@ -1,0 +1,82 @@
+---hidden Field-----
+index.html
+---------
+ <form action="sample" method="GET">
+        <input type="hidden" name="name" value="sample"/>
+        <input type="submit" value="Submit"/>
+        </form>
+-----servlet-----
+GET method
+PrintWriter out=response.getWriter();
+        String name=request.getParameter("uname");
+        out.println("Value is "+name);
+        processRequest(request, response);
+---------------------------------------------------------
+cookies
+-------
+index.html
+----------
+<form action="sample" method="POST">  
+        Name:<input type="text" name="userName"/><br/>  
+            <input type="submit" value="go"/>  
+</form>  
+-----FirstServlet---------
+ PrintWriter out = response.getWriter();  
+          
+    String n=request.getParameter("userName");  
+    out.print("Welcome First Page"+n);  
+  
+    Cookie ck=new Cookie("uname",n);//creating cookie object  
+    response.addCookie(ck);//adding cookie in the response  
+  
+    //creating submit button  
+    out.print("<form action='SampleServlet'>");  
+    out.print("<input type='submit' value='go'>");  
+    out.print("</form>");  
+          
+    out.close();  
+-----Second Servlet--------
+
+ Cookie ck[]=request.getCookies();  
+    out.print("Hello Second Page "+ck[0].getValue());  	
+-----------------------------------------------------------------
+----URL Rewriting-------
+
+index.html
+----------
+<form action="sample" method="POST">  
+Name:<input type="text" name="userName"/><br/>  
+<input type="submit" value="go"/>  
+</form>  
+---First Servlet--------
+String n=request.getParameter("userName");  
+        out.print("Welcome "+n);  
+  
+        //appending the username in the query string  
+        out.print("<a href='SampleServlet?uname=" + n + "'>Click here</a>");  
+                  
+        out.close();  
+-----Second Servlet---------
+  String n=request.getParameter("uname");  
+        out.print("Hello "+n);  
+---------------------------------------------------------
+----Httpsession---
+index.html
+----------
+<form action="sample" method="POST">  
+Name:<input type="text" name="userName"/><br/>  
+<input type="submit" value="go"/>  
+</form> 
+----First Servlet---------
+ String n=request.getParameter("userName");  
+        out.print("Welcome "+n);  
+  
+        //appending the username in the query string  
+          HttpSession session=request.getSession();  
+        session.setAttribute("uname",n);  
+  
+        out.print("<a href='SampleServlet' >visit</a>");  
+---------Second Servlet---------
+  HttpSession session=request.getSession(false);  
+        String n=(String)session.getAttribute("uname");  
+        out.print("Hello "+n);  
