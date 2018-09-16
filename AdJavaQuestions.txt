@@ -1,0 +1,1646 @@
+Chapter-1
+-------------------------------------------------------------------------------------------------------------------------------
+1._______client________is any application that enables you to access the contents on the web.
+a.server
+b.client
+c.protocol
+d.URL
+2.__________server_________ that delivers web pages,images and other resources for the incoming request.
+a.client
+b.server
+c.resources
+d.browser
+3._______protocol________ is the set of rule that defines how computers must communicate with each other over a network.
+a.URI
+b.URL
+c.protocol
+d.ip address
+4._____http_________is the stateless protocol that enables communications between client and a server.
+a.UDP
+b.TCP
+c.HTTP--
+d.All of the above
+5.HTTP request consists of (a)
+a.request line,request header,message body
+b.request line,version
+c.request url,request header
+d.only message body
+6.____request header________contains the additional information about the client, such as the name and version of the web browser
+a.request line
+b.request url
+c.request header
+d.message body
+7.___head_______ retrives only the header information of the response and not the information of the message body.
+a.GET
+b.POST
+c.HEAD
+d.UPDATE
+8.In the given http response, HTTP/1.0 202 Accepted
+which one defines response message number (c)
+a.HTTP
+b.HTTP/1.0
+c.202
+d.202 Accepted
+9.______jsp________ are server side Java programs that help in developing powerful,effifcient, platform-independent and dynamic web applications using
+html,xml and Java codes
+a.JSP
+b.Servlets
+c.CGI
+d.Java Script
+10.___servlet context__________provides information to the servlets to commuincate with the web container.
+a.servlet config
+b.servlet context
+c.servelt request
+d.asyn context
+11.Which of the servlet method will be invoked at each time the request raised by the web container?(d)
+a.init()
+b.destroy()
+c.start()
+d.service()
+12.Which of the servlet method will return information about servlet such as writer, copyright, version etc (b)
+a.getServletConfig()
+b.getServletInfo()
+c.service()
+d.getServletDetail()
+13.Which methos is used to retrieve the additional information about the client, such as the name and version of the web browser?(c)
+a.POST
+b.PUT
+c.GET
+d.HEAD
+14.___getParameterNames()________ returns an Enumeration object containing all the parameter names as String objects.
+a.getParameter()
+b.getParameterNames()
+c.getRemoteAddr()
+d.getParameterValues()
+-----------------------------------------------------------------------------------------------------------------
+Chapter-2
+------------------------------------------------------------------------------------------------------------------
+1.Which one of the following options provide information to the servlets during servlet initialization (c)
+a.ServletContext
+b.Servlet
+c.ServletConfig
+d.ServletResponse
+
+2.Which is the correct syntax for defining init()method that throws ServletException? (b)
+a.public void init(ServletConfig config)
+{
+}
+b.public void init(ServletConfig config) throws ServletException
+{
+}
+c.public String init(ServletConfig config) throws ServletException
+{
+}
+d.public void init(ServletContext context) throws ServletException
+{
+}
+
+3.Identify the correct syntax of servlet and servletmapping tag (a)
+a. <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>NewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+b. <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>NewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>newservlet</servlet-name>
+        <url-patterns>/NewServlet</url-patterns>
+    </servlet-mapping>
+c. <servlet>
+       <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>NewServlet</servlet-class>
+    </servlet-mapping>
+d. <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>NewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url>/NewServlet</url>
+    </servlet-mapping>
+
+4.Identify the correct syntax to retrieve the input from a html page and assign it to the integer variable.(a)
+a.int var=Integer.parseInt(request.getParameter("txtbox1"));
+b.int var=Integer(request.getParameter("txtbox1"));
+c.int var=Integer.parseInt("txtbox1");
+d.int var=request.getParameter("txtbox1");
+
+5.Identify the correct syntax to retrieve the below init-param
+<servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>NewServlet</servlet-class>
+<init-param>
+        <param-name>Initialdata</param-name>
+        <param-value>welcome</param-value>
+    </init-param>
+    </servlet>
+a.ServletContext cg=getServletContext();
+        String val=cg.getInitParameter("Initialdata");
+            out.println("<h1>Servlet Config " + val + "</h1>");
+b.ServletConfig cg=getServletConfig("Initialdata");
+        String val=cg.getInitParameter();
+            out.println("<h1>Servlet Config " + val + "</h1>");
+c.ServletConfig cg=getServletConfig();
+        String val=cg.getInitParameter("Initialdata");
+            out.println("<h1>Servlet Config " + val + "</h1>");
+d.ServletConfig cg=getServletConfig();
+        String val=cg.getInitParameter("welcome");
+            out.println("<h1>Servlet Config " + val + "</h1>");
+6.____ServletContext_______ is created by the web container at time of deploying the project.This object can be used to get configuration information from web.xml file
+ and it is only one object per web application
+a.ServletConfig
+b.ServletContext
+c.ServletResponse
+d.AsyncContext
+
+7.Which one of the following directories contains the web.xml file of the Java application?(b)
+a.Libraries
+b.WEB-INF
+c.SourcePackages
+d.root
+
+8.____WebServer_______ is a component of the web server which provides the runtime enviroment for executing the servlets.
+a.WebInitializer
+b.WebContainer
+c.web.xml
+d.WebServer
+
+9.What are the life cycle methods of servlet?(c)
+a.start(),service(),destroy()
+b.init(),start(),service(),destroy()
+c.init(),service(),destroy()
+d.init(),start(),service(),stop(),destroy()
+
+10.What is the syntax of @WebServlet (a)
+
+a.@WebServlet(name="MyOwnServlet",urlPatterns = {"/sendFile"})
+b.@WebServlet(names="MyOwnServlet",urlPattern = {"/sendFile"})
+c.@WebServlet(name='MyOwnServlet',urlPatterns = "/sendFile")
+d.@WebServlet(name="MyOwnServlet",urlPatterns = {'sendFile'})
+
+11.Identify the correct code snippet (c)
+a.<session-config>
+        <session:timeout>
+            30
+        </session:timeout>
+    </session-config>
+b.<session-context>--
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-context>
+c.<session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+d.<sessions-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </sessions-config>
+
+---------------------------------------------------------------------------------------------------------------
+Chapter-3
+---------------------------------------------------------------------------------------------------------------
+1.Below is the code snippet of MessageServlet (a)
+PrintWriter out=response.getWriter();
+try
+{
+	out.println("<body>");
+	out.println("<h1> Welcome to the Message Servlet </h1>");
+	out.println("</body>");
+}
+What will be the output of the below code in DemoServlet
+PrintWriter out=response.getWriter();
+try
+{
+	out.println("Servlet Started");
+	RequestDispatcher dis=getServletContext().getRequestDispatcher("/MessageServlet");
+        dis.include(request, response); 
+	out.println("Servlet Ended");
+}
+a.Servlet Started
+  Welcome to the Message Servlet
+  Servlet Ended
+b.Servlet Started
+  Servlet Ended
+  Welcome to the Message Servlet
+c.Servlet Started
+  Servlet Ended
+d.Servlet Started
+  <h1> Welcome to the Message Servlet </h1>
+  Servlet Ended
+
+2.Which one of the following represents the object taht intercepts the request and response that flow between a client and a servlet? (c)
+a.ServletContext
+b.ServletRequest
+c.Filter
+d.ServletResponse
+
+3.Below is the code snippet of RegisterServlet (c)
+	String requestType1=request.getParameter("r1");
+
+	if(requestType1.equals("register"))
+	{
+
+            RequestDispatcher dis=getServletContext().getRequestDispatcher("RegisteredServlet");
+            dis.forward(request, response);
+        }
+        else
+        {
+            RequestDispatcher dis=getServletContext().getRequestDispatcher("NonRegisteredServlet");
+            dis.forward(request, response); 
+        }
+
+The above code has error identify the possible solution to the code
+a.dispatch.forward(request);
+b.request.forward(request,response);
+c.RequestDispatcher dis=getServletContext().getRequestDispatcher("/RegisteredServlet");
+  RequestDispatcher dis=getServletContext().getRequestDispatcher("/NonRegisteredServlet");
+d.RequestDispatcher dis=request.getRequestDispatcher("RegisteredServlet");
+  RequestDispatcher dis=request.getRequestDispatcher("RegisteredServlet");
+
+4.Below is the code snippet of PaymentServlet where the user wants to select the discount amount which has to be passed to the final payment page, the discount amount is stored in setAttribute of the PaymentServlet.
+
+	    
+	   
+            RequestDispatcher dispatcher=getServletContext().getRequestDispatcher("/FinalPaymentPage");
+	    request.setAttribute("discount", new Double(discount));
+            dispatcher.forward(request, response);
+
+How to get the discount value in final payment page through getAttribute? (a)
+a.Double discAmount=(Double)request.getAttribute("discount");
+b.Double discAmount=request.getAttribute("discount");
+c.Double discAmount=(Double)request.getAttribute(discount);
+d.Double discAmount=(Double)request.getAttribute("discount",discount);
+
+5._____include_______is the method that you can use to include the content of the calling web page in the called webpage
+a.forward
+b.include
+c.setAttribute
+d.getAttribute
+
+6.What will be the filter mapping that intercepts the servlet NewServlet (d)
+   <filter>
+        <filter-name>NewFilter1</filter-name>
+        <filter-class>NewFilter1</filter-class>
+    </filter>
+   <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>NewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+a.<filter-mapping>
+        <filter-name>NewFilter1</filter-name>
+        <servlet-name>/*</servlet-name>
+    </filter-mapping>
+b.<filter-mapping>
+        <filter-name>NewFilter1</filter-name>
+        <servlet-class>NewServlet</servlet-class>
+    </filter-mapping>
+c.<filter-mapping>
+        <filter-name>NewFilter1</filter-name>
+         <url-pattern>/NewServlet</url-pattern>
+    </filter-mapping>
+d<filter-mapping>
+        <filter-name>NewFilter1</filter-name>
+        <servlet-name>NewServlet</servlet-name>
+    </filter-mapping>
+
+7.Identify the correct method definition of doFilter() (a)
+a.public void doFilter(ServletRequest request, ServletResponse response,
+            FilterChain chain)
+            throws IOException, ServletException {
+    
+        try {
+            chain.doFilter(request, response);
+        } catch (Throwable t) 
+            t.printStackTrace();
+        }
+        
+        
+    }
+b.public void dofilter(ServletRequest request, ServletResponse response,
+            FilterConfig config)
+            throws IOException, ServletException {
+    
+        try {
+            config.doFilter(request, response);
+        } catch (Throwable t) 
+            t.printStackTrace();
+        }
+        
+        
+    }
+c.public void doFilter(ServletRequest request, ServletResponse response,
+            FilterChain chain)
+            throws IOException, ServletException {
+    
+        try {
+            chain.doFilter();
+        } catch (Throwable t) 
+            t.printStackTrace();
+        }
+        
+        
+    }
+d.public void doFilter(ServletRequest request, ServletResponse response)
+            throws IOException, ServletException {
+    
+        try {
+            response.doFilter(request, response);
+        } catch (Throwable t) 
+            t.printStackTrace();
+        }
+        
+        
+    }
+
+8.Below is the code to create filter using @WebFilter but it is showing an error.(a)
+@WebFilter(filterName = "LoginFilter",urlPatterns = {"/LoginPage"},initParams = {@WebInitParam name = "invalid", value = "172.23.212.133"})
+Identify the correct code
+a.@WebFilter(filterName = "LoginFilter",urlPatterns = {"/LoginPage"},initParams = {@WebInitParam(name = "invalid", value = "172.23.212.133")})
+b.@WebFilter(filterName = "LoginFilter",urlPatterns = {"/LoginPage"},initParams = @WebInitParams(name = "invalid", value = "172.23.212.133"))
+c.@WebFilter(filterName = "LoginFilter",urlPatterns = {"/LoginPage"},initParams = {@WebInitParams name = "invalid", value = "172.23.212.133" })
+d.@WebFilterfilterName = "LoginFilter",urlPatterns = {"/LoginPage"},initParams = {@WebInitParam(name = "invalid", value = "172.23.212.133")}
+
+9.____FilterConfig_______ is used to retrieve the initialization parameter and name of the filter.
+a.Filter
+b.FilterConfig
+c.FilterChain
+d.FilterContext
+
+10.What are the life cycle methods of filter?(a)
+a.init(),doFilter(),destroy()
+b.init(),doStart(),destroy()
+c.init(),doFilters(),destroy()
+d.init(),doFilterStart(),destroy()
+
+11.Identify the correct syntax of Request dispatcher (d)
+a.RequestDispatcher dis=getServletContext().getResponseDispatcher("/RegisteredServlet");
+b.RequestDispatcher dis=getServletConfig().getRequestDispatcher("/RegisteredServlet");
+c.RequestDispatcher dis=getServletContext().getRequest("/RegisteredServlet");
+d.RequestDispatcher dis=getServletContext().getRequestDispatcher("/RegisteredServlet");
+
+12.Identify the correct code snippet which will include the content "Welcome to servlet" on the servlet (c)
+a.RequestDispatcher dis=getServletContext().getRequestDispatcher("/Servlet");
+	out.println("Welcome to servlet");
+        dis.include(); 
+b.RequestDispatcher dis=getServletContext().getRequestDispatcher("/Servlet");
+	out.println("Welcome to servlet");
+        dis.include(request); 
+c.RequestDispatcher dis=getServletContext().getRequestDispatcher("/Servlet");--
+	out.println("Welcome to servlet");
+        dis.include(request, response); 
+d.RequestDispatcher dis=getServletContext().getRequestDispatcher("/Servlet");
+	out.println("Welcome to servlet");
+        dis.include(response,request); 
+-------------------------------------------------------------------------------------------------------------
+Chapter-4
+-------------------------------------------------------------------------------------------------------------
+1._____HiddenForm fields_______ is used to maintain the session information of a user while the user interacts with the web application
+a.Cookies
+b.HiddenForm fields
+c.URL rewriting
+d.HttpRequest
+
+2.A servlet stores information on the client browser using cookies. The servlet creates a cookie, as shown in the following code snippet (a)
+Cookie mycookie=new Cookie("countData","1");
+Which one of the following code snippet will be used ot retrieve the stored information from the cookie?
+
+a.Cookie cookie = null;
+  Cookie[] cookies = null;
+  cookies = request.getCookies();
+  if( cookies != null ) 
+  {
+   for (int i = 0; i < cookies.length; i++) 
+   {
+     if(cookies[i].getName().equals("countData"))
+      {
+        cookie=cookies[i];     
+       	out.print("Value: " + cookie.getValue( )+" <br/>");
+      }
+    }
+  }
+b.Cookie cookie = null;
+  Cookie[] cookies = null;
+  cookies = request.getCookies();
+  if( cookies != null ) 
+  {
+   for (int i = 0; i < cookies.length; i++) 
+   {
+     if(cookies[i].equals("countData"))
+      {
+        cookie=cookies;     
+       	out.print("Value: " + cookie.getValue( )+" <br/>");
+      }
+    }
+  }
+c.Cookie[] cookie;
+  Cookie cookies;
+  cookies = request.getCookie();
+  if( cookies != null ) 
+  {
+   for (int i = 0; i < cookies.length; i++) 
+   {
+     if(cookies[i].getName().equals("countData"))
+      {
+        cookie=cookies[i];     
+       	out.print("Value: " + cookie.getValue( )+" <br/>");
+      }
+    }
+  }
+d.Cookie cookie = null;
+  Cookie[] cookies = null;
+  cookies = request.getCookies();
+  if( cookies != null ) 
+  {
+   for (int i = 0; i < cookies.length; i++) 
+   {
+     if(cookies[i].getname().equals("countData"))
+      {
+        cookie=cookies[i];     
+       	out.print("Value: " + cookie.getvalue( )+" <br/>");
+      }
+    }
+  }
+
+3.You have to create a cookie to track the session as a part of secuiry measure you have to ensure that cookie does not exists once the browser is closed. Identify the correct code snippet (c)
+
+a.Cookie cookieObject=new Cookie(sessionId,String.valueOf(id));
+  int age=cookieObject.getmaxage();
+  cookieObject.setMaxAge(age);
+  response.addCookie(cookieObject);
+b.Cookie cookieObject=new Cookie("sessionId",String.valueOf(id));
+  int age=cookieObject.getMaxAge();
+  cookieObject.setMaxAge(age);
+  response.addCookie(cookieObject);
+c.Cookie cookieObject=new Cookie("sessionId",String.valueOf(id));
+  int age=60*60*24*30;
+  cookieObject.setMaxAge(age);
+  response.addCookie(cookieObject);
+d.Cookie cookieObject=new Cookie("sessionId",String.valueOf(id));
+  int age=60*60*24;
+  cookieObject.setMaxAge(age);
+  response.addCookie(cookieObject);
+
+4.____Httpsession______ provides a mechanism to store session-related data in the memory of the server and then retrieves
+the session information for consecutive communications with the same client.
+a.HttpSession
+b.URL Rewriting
+c.HttpServlet
+d.Httpsession
+
+5._HttpSession getSession(create:boolean)________ creates the current session associated with a request and it creates a new session if there is no
+current session associated with the request.
+a.getSession()
+b.HttpSession getSession(create:boolean)
+c.getSessionId()
+d.getSessionAttribute()
+
+6._____Server Cluster______ refers to a group of independent servers  that work together  as a single system to
+ensure high service availability
+a.Server Migration
+b.Server Cluster
+c.Clustered Servers
+d.Both a & b
+
+7.Below is the code to send data through URL rewriting, (c)
+String n=request.getParameter("userName");  
+        out.print("Welcome "+n);  
+  
+        //appending the username in the query string  
+        out.print("<a href='SampleServlet?uname=" + n + "'>Click here</a>");  
+                  
+        out.close(); 
+How to fetch the data in SampleServlet?
+a.  String n=request.getParameter("userName");  
+b.  String n=request.getParameterValue("uname");  
+c.  String n=request.getParameter("uname");  
+d.  String n=response.getParameter("uname");  
+
+8.This code will send the data through HttpSession object, however it as error (d)
+
+String name=request.getParameter("userName");  
+        out.print("Welcome "+n);  
+  
+        //appending the username in the query string  
+          HttpSession session=request.getSession();  
+        request.setAttribute("uname",name);  //line1
+  
+        out.print("<a href='SampleServlet' >visit</a>");  
+---------Second Servlet---------
+  HttpSession session=request.getSession(false);  //line2
+        String n=(String)session.getAttribute("uname");  
+        out.print("Hello "+n);  
+
+Identify the correct code
+a. line1 to be replace with this code response.setAttribute("uname",name);
+b. line2 to be replace with this code request.setAttribute("uname",name);
+c. line1 to be replace with this code session.getSession(false); 
+d. line1 to be replace with this code session.setAttribute("uname",name);
+
+
+
+9.___encodedRedirectURL(String url)______encodes the specified URL by including the sessionID of a session and redirects  the user 
+to the specified URL
+a.encodeRedirectURL(String url);
+b.encodeURL(String url);
+c.encodeRedirecturl(string url);
+d.encodeRedirecturl(String url);
+
+10.What are the two approches used in Session Migration technique (d)
+a.Storing the session information in browser & Storing the session information in server cluster
+b.Storing the session information in client machine & Storing the session information in memory of multiple server
+c.Storing the session information in cookies & Storing the session information in memory of single server
+d.Storing the session information in database & Storing the session information in memory of multiple server
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Chapter-5
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.What is the syntax to specify the buffer size of JSP page to 15kb. (c)
+a.<%@include buffer="15kb"%>
+b.<%@page buffer="15kb"%>
+c.<%@taglib buffer="15kb"%>
+d.<%@page buffer="15"%>
+
+2.Below is the JSP code assign two variables (a)
+<c:set var="Num1" value="10"/>
+<c:set var="Num2" value="10"/>
+Identify the correct code which will produce the output as 20
+a.<c:set var="sum" value=${Num1+Num2}"/>
+  <c:out value=${sum}"/>
+b.<c:set var="sum" value=${Num1+Num2}"/>
+  <c:out value=${value}"/>
+c.<c:set value="sum" var=${Num1+Num2}"/>
+  <c:out value=${sum}"/>
+d.<c:out var="sum" value=${Num1+Num2}"/>
+
+3.Which one of the following options defines the attributes that notify the web container about the general settings of JSP page? (a)
+a.page directive
+b.taglib directive
+c.include directive
+d.page info
+
+4.___include directive______ includes the output of the file specified using the file attribute in the form of its relative URL in the calling JSP page.
+a.include directive
+b.page directive
+c.scriptlets
+d.taglib directive
+
+5.Below is the code to print product of 2 numbers in JSP (d)
+ <%!   
+  int prod(int a,int b){  
+      return a*b;  
+    }  %>  
+<"Product  is:+prod(3,5)">
+
+This code is generating an error identify the correct code from below so that it prints the product
+a.  <%!   
+  prod(int a,int b){  
+      return a*b;  
+    }  %>  
+<"Product  is:+prod(3,5)">
+b. <%!   
+  int prod(int a,int b) 
+      return a*b;  
+      %>  
+<"Product  is:+prod(3,5)"> 
+c. <%=   
+  int prod(int a,int b){  
+      return a*b;  
+    }  %>  
+<"Product  is:+prod(3,5)">
+d. <%!   
+  int prod(int a,int b){  
+      return a*b;  
+    }  %>  
+<%= "Product  is:"+prod(3,5) %>  --
+
+6.___JSP Scriptlets_________ consists of the Java code snippets that are enclosed within <% and %>
+a.JSP Actions
+b.JSP Expressions
+c.JSP Scriptlets
+d.JSP Declarations
+
+
+7.This code prints the sum from a POJO class add.java (b)
+<jsp:useBean="obj" class="com.niit.add"/>  
+<%
+     m=obj.add(5,3);
+    print("Sum is "+m);
+    %>
+It is giving an error, identify the correct code
+a.<jsp:usebean id="obj" class="com.niit.add"/>  
+<%=
+    int m=obj.add(5,3);
+    out.print("Sum is "+m);
+    =%>
+b.<useBean id="obj" class="com.niit.add"/>  
+<%
+    int m=obj.add(5,3);
+    out.print("Sum is "+m);
+    %>
+c.<jsp:usebean value="obj" class="add"/>  
+<%
+    int m=obj.add(5,3);
+    out.print("Sum is "+m);
+    %>
+d.<jsp:useBean class="com.niit.add"/>  
+<%
+    int m=add(5,3);
+    out.print("Sum is "+m);
+    %>
+8._____<jsp:param>_______ defines the parameter to be passed to an included or forwarded page
+a.<jsp:params>
+b.<jsp:parameter>
+c.<jsp:param>
+d.<jsp:paramvalue>
+9.______Servlet class loading_____________ is responsible for loading the servlet class in the web container.
+a.Servlet class loading
+b.Servlet class Intialization
+c.Servlet transalation
+d.Servlet instance creation
+
+10.The lifecycle of JSP page is managed by _______Web Container_____________
+a.Server
+b.Web Container
+c.Servlet
+d.Web.xml
+----------------------------------------------------------------------------------------------
+Chapter-6
+---------------------------------------------------------------------------------------------
+1.which of the following is not true about JSTL (2)
+1.It is a tag library that consists of predefined tags to perform common tasks in JSP pages such as 
+iterating over a list of items or formatting page output according to specific condition--
+2.It allows programmers to increase the amount of scriptlets in JSP Pages
+3.JSTL is used with EL
+4.Using JSTL and EL enables programmer to create scriptless JSP Page
+
+
+2.Which of the following is not a Tag Library (4)
+
+1.Core tags
+2.Formatting tags
+3.Database tags
+4.Cookie tags
+
+3.Which of the following is not a task for core tag (4)
+1.Implementing flow control
+2.Iterating through a list
+3.implementing url rewriting
+4.connecting to database
+
+4.which of the following tags is used to assing a value to a variable or property (2)
+
+1.out
+2.set
+3.if
+4.choose
+
+5.what is missing in below given code (4)
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" %>
+
+1.uri is incorrect
+2.use page in place of taglib
+3.use include in place of taglib
+4.prefix not defined 
+
+6.which of the below tags is used to format the string representation of a number into locale sensitive  or customized number (2)
+
+1.formatNumber
+2.parseNumber
+3.setLocale
+4.timeZone
+
+7.Predict the output of below given code (3)
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<html>
+<head>
+<title>
+Formatting Tags
+</title>
+</head>
+<body>
+<fmt:formatNumber value="123000.4509" type="currency"/>
+</body>
+</html>
+
+
+
+1.123000.45
+2.123000.4509
+3.$123,000.45
+4.$123,00.4509
+
+
+8.which of  the below given tags is used to specify name of the datasource that needs to used  in web application (2)
+
+1.param
+2.setDataSource
+3.query
+4.transaction
+
+9.what is wrong with below given code (2)
+
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<html>
+<head>
+<title>
+Core Tags
+</title>
+
+</head>
+<sql:setDataSource  var="ds" driver="sun.jdbc.odbc.JdbcOdbcDriver" url="jdbc:derby://localhost:1527/ProductDetails" user="niit" password="pass123"/>//line 3
+<sql:query dataSource="ds" var="result">//line 1
+
+Select * from Products //line2
+</sql:query>
+</body>
+</html>
+
+
+
+
+
+1. query has to be in " " in line 2
+2.datasource has to be given as dataSource="${ds}"
+3.url has to be given as "jdbc:derby://localhost//ProductDetails"
+4.setConnection tag has to be used in place of setDataSource
+
+
+10.Peter has written a peice of code in JSP page to retreive cookie information ,but he wants to write same code using EL (4)
+
+Cookie[] datacookies=request.getCookies();
+for(int i=0;i<datacookies.length;i++) 
+ {
+if(datacookies.getName().equals("peter"))
+ { 
+name=datacookies[i].getValue();
+ }
+  
+ } 
+
+
+
+1.${cookie.value}
+2.$cookie.peter.value
+3.$cookie.value
+4.${cookie.peter.value}
+
+
+11.The attribute birthDate for a bean name student can be accessed using which of the following code (1)
+1.${student.birthDate}
+2.{$student.birthDate}
+3.$student.birtDate
+4.student.birthDate$
+
+
+12.Jason has written a code using el (3)
+
+${4 + var}
+
+what would happen if var is null
+
+1.jsp page will throw exception
+
+2.Result will be 0
+3.Result will be 4
+4.page will not display anything
+
+
+
+
+13identify uri to be used from below given tld file (2)
+<taglib version="2.1" xmlns="" xmlns:xsi="" xsi:schemaLocation="">
+<taglib-version>
+1.0
+</taglib-version>
+<jsp-version>
+</jsp-version>
+<shortname></shortname>
+<uri>/WEB-INF/tlds/tld1</uri>
+<tag>
+<name>
+TestTag
+</name>
+<tag-class>
+FirstServlet
+</tag-class>
+
+</tag>
+
+</taglib>
+
+
+
+
+
+
+1.FirstClass
+2./WEB-INF/tld1
+3.TestTag
+4./WEB-INF/FirstClass
+
+
+14.which of the following methods can  not be used to define functionality of custom tag (4)
+1.doStartTag
+2.doEndTag
+3.release
+4.commit
+
+-------------------------------------------------------------------------------------------------------------
+Chapter 7
+--------------------------------------------------------------------------------------------------------------
+1. Identify missing parameter  Type in below giving  code
+
+
+public ActionForward execute(___ActionMapping______ mapping,ActionForm form,HttpServletRequest req,HttpServletResponse res)
+
+{
+ }
+
+
+1.ActionForward
+2.HttpServletResuest
+3.Cookie
+4.ActionMapping
+
+
+16.You are creating an online music library website using Struts framework.To avail various services of the website ,a user needs to login with website To do this you have decided to create a registration page.The registration page consists of the following three fields
+1.Username
+2.Password
+3.Confirmation password
+
+You want that if password and confirmation password values are not same ,then error message should appear on the registration page.Identify which one of the following options you can use to perform the required task
+
+1.Set the validate attribute of the <action> tag to true in struts-config.xml file and implement the validate method in Action Class
+2.Set the validate method of the <action> tag to false in struts-config.xml file and implement the validate() method in Action class
+3.Set validate attribute of <action> tag to true in struts-config.xml and implement that validate() method in the ActionForm class
+4.Set the validate attribute of the <action-mapping> tag to true in struts-config.xml file and implement the validate method in ActionForm class
+
+
+
+2.Refer to below given code (1)
+public class RegistrationAction extends org.apache.struts.action.Action
+{ 
+private static final String SUCCESS="success";
+private static final String Error="error";
+@Override
+public ActionForward execute(ActionMapping mapping ,ActionForm form,HttpServletRequest req,HttpServletResponse res)
+ {  
+RegistrationForm rf=form;
+String username=rf.getUserName();
+String password1=rf.getPassword1();
+String password2=rf.getPassword2();
+if(password1.equals(password2))
+ { 
+return mapping.findForward(SUCCESS);
+
+ } 
+return mapping.findForward(Error);
+ } 
+ } 
+
+
+what is wrong with above code
+
+1.The code to obtain Registration form object is incorrect
+the correct code is 
+RegistrationForm rf=(RegistrationForm)form;
+
+2.The code to obtain username ,password and password 1 is incorrect,correct code is 
+
+
+
+String username=rf.userName;
+String password1=rf.password1;
+String password2=rf.password2;
+
+3.The code to obtain Registration form object is incorrect
+
+correct code is 
+RegistrationForm rf=mapping.findForward(form)
+
+4.The code to obtail Registration form object is incorrect
+correct code is 
+RegistrationFor rf=(RegistrationForm)req.getSession();
+
+
+
+3.refer to code below (2)
+<action-mappings>
+<action name="LoginActionForm" path="/register/Login" type=mypack.RegisterAction" validate="true">
+
+</action>
+</action-mappings>
+
+what is missing in above code so that request can be forwarded to success or error pages 
+1.<forward name="success.jsp" path="success"/>
+  <forward name="error.jsp" path="error"/>
+
+2.<forward name="success" path="success.jsp"/>
+  <forward name="error" path="error.jsp"/>
+
+3.<forward path="success.jsp"/>
+  <forward path="error.jsp"/>
+
+4.<forward name="success" />
+  <forward name="error" />
+
+4.______view______ represents the display of the information provided by the model in a UI.
+a.controller
+b.data
+c.view
+d.Java bean
+
+5.___ActionClass__________ acts a controller that handles all the client requests.
+a.ActionClass
+b.ActionServlet
+c.ActionForm
+d.ActionMap
+
+6.____ActionForm_________ is Java bean class which stores the data entered by a user.
+a.Action
+b.ActionForm
+c.ActionMapping
+d.ActionBean
+
+7.Which one of the following taglibs provides tags for interacting with Java Beans. (a)
+a.struts-bean.tld
+b.struts-beans.tld
+c.strusts-class.tld
+d.struts-beanclass.tld
+
+8.Which one of the following taglibs provides tags for managing the conditional generation of output or for managing the (a)	
+application flow?
+a.struts-logic.tld
+b.struts-log.tld
+c.struts-beans
+d.struts-html
+
+9.What is the extension of Application resources file? (b)
+a..xml
+b..properties
+c..tld
+d..txt
+
+10.Identify the correct code format for  <form-bean> (d)
+a.<struts-config>
+   <action-mappings>
+    <form-beans>
+        <form-bean name="StudentActionFormBean" type="com.bean.StudentActionFormBean"/>
+    
+    </form-beans>
+   </action-mappings>
+ </struts-config>
+b.<struts-config>
+    
+        <form-bean name="StudentActionFormBean" type="com.bean.StudentActionFormBean"/>
+    
+
+c.<struts-config>
+    <form-beans>
+        <form-bean name="com.bean.StudentActionFormBean" type="StudentActionFormBean"/>
+    
+    </form-beans>
+d.<struts-config>
+    <form-beans>
+        <form-bean name="StudentActionFormBean" type="com.bean.StudentActionFormBean"/>
+    
+    </form-beans>
+	
+11.Identify the correct code format for <action-mappings> (c)
+a.<action-mapping>
+            <struts:action path="/validate" type="com.validate.ValidateAction">
+                <forward name="success" path="/success.html"/>
+                <forward name="error" path="/error.html"/>
+
+            </struts:action>
+        <struts:action input="/Student.jsp" name="StudentActionFormBean" path="/student" scope="session" type="com.action.StudentAction">
+            <forward name="success" path="/success.html"/>
+            <forward name="error" path="/error.html"/>
+            
+            
+        </struts:action>
+        <struts:action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mapping>
+b.<action-mapping>
+            <action path="validate" type="com.validate.ValidateAction">
+                <forward name="success" path="/success.html">
+                <forward name="error" path="/error.html">
+
+            </action>
+        <action input="Student.jsp" name="StudentActionFormBean" path="/student" scope="session" type="com.action.StudentAction">
+            <forward name="success" path="/success.html"/>
+            <forward name="error" path="/error.html"/>
+            
+            
+        </action>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mapping>
+c.<action-mappings>
+            <action path="/validate" type="com.validate.ValidateAction">
+                <forward name="success" path="/success.html"/>
+                <forward name="error" path="/error.html"/>
+
+            </action>
+        <action input="/Student.jsp" name="StudentActionFormBean" path="/student" scope="session" type="com.action.StudentAction">
+            <forward name="success" path="/success.html"/>
+            <forward name="error" path="/error.html"/>
+            
+            
+        </action>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mappings>
+d.<action-mappings>
+            <actions path="/validate" type="com.validate.ValidateAction">
+                <forward name="success" path="/success.html">
+                <forward name="error" path="/error.html">
+
+            </actions>
+        <actions input="/Student.jsp" name="StudentActionFormBean" path="/student" scope="session" type="com.action.StudentAction">
+            <forward name="success" path="/success.html"/>
+            <forward name="error" path="/error.html"/>
+            
+            
+        </actions>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mappings>
+------------------------------------------------------------------------------------------------------------
+Chapter-8
+------------------------------------------------------------------------------------------------------------
+
+
+
+1.Peter wants to delete a records from database sample from table Customer (a)
+for which he has written code 
+EntityManagerFactory emf=Persistence.createEntityManagerFactory("storejpa");
+EntityManager em=emf.createEntityManager();
+EntityTransaction userTransaction=em.getTransaction();
+
+which one of the code snippets will he use to to delete the records
+a.userTransaction.begin()
+Query del=em.createNativeQuery("Delete from Customer c");
+int delrec=del.executeUpdate();
+userTransaction.commit();
+
+b.userTransaction.begin()
+Query del=em.createNativeQuery("Delete from Customer c");
+ResultSet delrec=del.executeUpdate();
+userTransaction.commit();
+
+
+c.userTransaction.begin()
+Query del=em.createNativeQuery("Delete from Customer c");
+del.execute();
+userTransaction.commit();
+
+
+d.userTransaction.begin()
+Statement del=em.createNativeQuery("Delete from Customer c");
+int delrec=del.executeUpdate();
+userTransaction.commit();
+
+
+
+2.Identify the correct code that will add the datas to database, already USER_JPA is created in persistance.xml
+a.String name=request.getParameter("uname");
+        String pwd=request.getParameter("pwd");
+        EntityManager entitymanager = Persistence.createEntityManagerFactory("User_JPA");
+      
+      EntityManagerFactory emfactory  =entitymanager.createEntityManager();
+      entitymanager.getTransaction().begin( );
+      User user=new User();
+      user.setName(name);
+      user.setPwd(pwd);
+      entitymanager.persist(user);
+      entitymanager.getTransaction().commit();
+      entitymanager.close();
+      emfactory.close();
+        processRequest(request, response);
+
+b.String name=request.getParameter("uname");
+        String pwd=request.getParameter("pwd");
+        EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("User_JPA");
+      
+      EntityManager entitymanager = emfactory.createEntity();
+      entitymanager.getTransaction().begin( );
+      User user=new User();
+      user.setName(uname);
+      user.setPwd(pwd);
+      entitymanager.add(user);
+      entitymanager.getTransaction().commit();
+      entitymanager.close();
+      emfactory.close();
+        processRequest(request);
+
+c.String name=request.getParameter("uname");
+        String pwd=request.getParameter("pwd");
+        EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("User_JPA");
+      
+      EntityManager entitymanager = emfactory.createEntity();
+      entitymanager.begin( );
+      User user;
+      user.setName(name);
+      user.setPwd(pwd);
+      entitymanager.persist(user);
+     
+      entitymanager.close();
+      emfactory.close();
+        processRequest(request, response);
+
+d.String name=request.getParameter("uname");
+        String pwd=request.getParameter("pwd");
+        EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("User_JPA");
+      
+      EntityManager entitymanager = emfactory.createEntityManager();
+      entitymanager.getTransaction().begin( );
+      User user=new User();
+      user.setName(name);
+      user.setPwd(pwd);
+      entitymanager.persist(user);
+      entitymanager.getTransaction().commit();
+      entitymanager.close();
+      emfactory.close();
+        processRequest(request, response);
+
+3.Below is the code of persistance.xml, but it is not connecting to the database
+ <persistence name="User_JPA" transaction-type="RESOURCE_LOCAL">
+   
+    <properties>
+    
+         <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+         <property name="javax.persistence.jdbc.user" value="sa"/>
+         <property name="javax.persistence.jdbc.password" value="niit"/>
+         <property name="javax.persistence.jdbc.driver" value="h2.Driver"/>
+          
+    
+    
+    </properties>
+  </persistence>
+
+Identify the correct code
+a. <persistence name="User_JPA" transaction-type="RESOURCE_LOCAL">
+     <properties>
+    
+         <class>com.niit.User</class>
+  
+         <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+         <property name="javax.persistence.jdbc.user" value="sa"/>
+         <property name="javax.persistence.jdbc.password" value="niit"/>
+         <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+          
+    
+    
+    </properties>
+  </persistence>
+b. <persistence-unit name="User_JPA" transaction-type="RESOURCE_LOCAL">
+  
+         <class>com.niit.User</class>
+    <properties>
+    
+         <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+         <property name="javax.persistence.jdbc.user" value="sa"/>
+         <property name="javax.persistence.jdbc.password" value="niit"/>
+         <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+          
+    
+    
+    </properties>
+  </persistence-unit>
+c. <persistence-unit name="User_JPA" transaction-type="RESOURCE_LOCAL">
+   
+         <bean>User</bean>
+    <properties>
+    
+         <property name="javax.persistence.url" value="jdbc:h2:tcp://localhost/~/test"/>
+         <property name="javax.persistence.user" value="sa"/>
+         <property name="javax.persistence.password" value="niit"/>
+         <property name="javax.persistence.driver" value="h2.Driver"/>
+          
+    
+    
+    </properties>
+  </persistence-unit>
+d. <persistence-unit name="User_JPA" transaction="RESOURCE_LOCAL">
+   
+         <bean>com.niit.User</bean>
+    <properties>
+    
+         <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+         <property name="javax.persistence.jdbc.user" value="sa"/>
+         <property name="javax.persistence.jdbc.password" value="niit"/>
+         <property name="javax.persistence.jdbc.driver" value="h2.Driver"/>
+          
+    
+    
+    </properties>
+  </persistence-unit>
+4.Identify the correct code to update the data in database,already Employee_JPA is created in persistance.xml
+a.EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Employee_JPA " );
+      
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( ).begin( );
+      Employee employee = entitymanager.find( Employee,1201);
+      employee.setSalary( 46000 );
+      entitymanager.getTransaction( ).commit( );
+      entitymanager.update();
+      emfactory.close();
+b.EntityManagerFactory emfactory = persistence.createEntityManagerFactory( "employee_JPA" );
+      
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( ).begin( );
+      employee.setSalary(46000 );
+      entitymanager.getTransaction( ).commit( );
+      entitymanager.close();
+      emfactory.close();
+c.EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Employee_JPA" );
+      
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( );
+      Employee employee = entitymanager.find( Employee.class);
+      employee.setSalary(46000 );
+      entitymanager.getTransaction( ).update( );
+      entitymanager.close();
+      emfactory.close();
+d.EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Employee_JPA" );
+      
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( ).begin( );
+      Employee employee = entitymanager.find( Employee.class, 1201 );
+      employee.setSalary( 46000 );
+      entitymanager.getTransaction( ).commit( );
+      entitymanager.close();
+      emfactory.close();
+5.Identify the correct code to delete the data in database,already Employee_JPA is created in persistance.xml
+a.EntityManagerFactory emfactory = Persistence.createEntityManager( "Employee_JPA" );
+      EntityManager entitymanager = emfactory.createEntityManagerFactory( );
+      entitymanager.getTransaction( ).start( );
+      Employee employee = entitymanager.find( Employee);
+      entitymanager.remove( employee );
+      entitymanager.getTransaction( ).commit( );
+      entitymanager.close( );
+      emfactory.close( );
+b.EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Employee_JPA" );
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( ).begin( );
+      Employee employee = entitymanager.find( Employee.class, 1201 );
+      entitymanager.remove( employee );
+      entitymanager.getTransaction( ).commit( );
+      entitymanager.close( );
+      emfactory.close( );
+c.EntityManagerFactory emfactory = persistence.createEntityManagerFactory( "Employee_JPA" );
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( ).start( );
+      Employee employee = entitymanager.delete( Employee.class, 1201 );
+      entitymanager.getTransaction( ).commit( );
+      entitymanager.close( );
+      emfactory.close( );
+d.EntityManagerFactory emfactory = persistence.createEntityManagerFactory( "Employee_JPA" );
+      EntityManager entitymanager = emfactory.createEntityManager( );
+      entitymanager.getTransaction( ).begin( );
+      Employee employee = entitymanager.find( Employee, 1201 );
+      entitymanager.delete( employee );
+      entitymanager.getTransaction( ).commit( );
+      entitymanager.close( );
+      emfactory.close( );
+6.___Connection________________ interface establishes a connection between Java applications and a database
+a.Statement 
+b.Connection 
+c.DriverManager
+d.ConnectionDb
+
+7.______granularity__________ refers to the mismatch in the no of classes that are mapped with a certain number of database tables
+a.subtypes
+b.granularity
+c.identity
+d.association
+8._____persistance unit_________ refers to the unit refers to a collection of entity classes that are stored in a JAR archieve with a configuration file.
+a.JPA
+b.Persistance Unit
+c.Persistance Class
+d.POJO
+
+9.JPA is implented by ______javax.persistance________________ package
+a.java.persistence
+b.javax.persistence
+c.java.sql.persistence
+d.java.util.persistence
+
+
+10.____Object Relational Mapping_________is a functionality which is used to develop and maintain a relationship between an object and 
+relational database by mapping an object state to database column.
+a.Object Relational Mapping 
+b.Object Relative Mapping
+c.Object Relational Mapper
+d.Object Relations Mappings 
+
+-----------------------------------------------------------------------------------------------------
+Chapter-9
+*********------------------------------------------------------------------------------------------------
+1.You need to asynchronously validate the format of an email id entered in the text box,id of the textbox is "emailId".Which one of then following Java Script mehtod is correct to call the ValidatioServlet?
+a.function doLookup()
+{  
+var name=document.getElemenyById("emailId");
+var url="Validation?id="+encodeURIComponent(name.value);    
+var req=new XMLHttpRequest();
+request.open("GET",url,true);  
+request.send(null);  
+}
+b.function doLookup()
+{  
+var name=document.getElemenyById("emailId");
+var url="Validation?id="+encodeURIComponent(name.value);    
+var req=new XMLHttpRequest(true);
+request.open("GET",url,null);  
+request.send();  
+}
+c.function doLookup()
+{  
+var name=document.getElemenyById("emailId");
+var url="Validation?id="+encodeURIComponent(name);    
+var req=new XMLHttpRequest();
+request.open("GET",url,null);  
+request.send(true);  
+d.function doLookup()
+{  
+var name=document.getElemenyById("emailId");
+var url="Validation?id="+encodeURIComponent(name.value);    
+var req=new XMLHttpRequest(null);
+request.open(url,null);  
+request.send(true);  
+}
+}
+2.Identify the Java script code that assigns the html controls value and a servlet mapping
+<input type="text" size="20" id="userId" name="id" onKeyup="validate()"/>
+a.var uid=document.getElemenyById("userId");
+var url="SampleServlet?id="+encodeURIComponent(uid.value);
+b.var uid=document.getElemenyById("id");
+var url="SampleServlet?id="+encodeURIComponent(id.value); 
+c.var uid=document.getElemenyByName("userId");
+var url="SampleServlet?id="+encodeURIComponent(uid); 
+d.var uid=document.getElement();
+var url="SampleServlet?id="+encodeURIComponent(uid.value); 
+
+3.Identify the correct sytax to initiate AJAX behaviour when the user enters a character in the textbox
+a.<text type="text" name="name" onkeyup="searchInfo()">  
+b.<input type="text" name="name" value="searchInfo();">  
+c.<input type="text" name="name" onkeyup="searchInfo()">  
+d.<input type="text" name="name" action="searchInfo()">  
+
+4.___AJAX_____________ is the web development technique that is used to create dynamically interactive web applications.
+a.Struts
+b.Servlets
+c.AJAX
+d.JSTL
+
+5.____________enables the data exchange between client and server without reloading the complete page.
+a.HttpRequest
+b.XMLHttpRequest
+c.ActiveXObject
+d.Xmlhttprequest
+
+6._________________ is used by the servlet that wants to forward the response generation task to another servlet.
+a.AsynCommunication
+b.AsyncContext
+c.AsyncConfig
+d.AsyncServlet
+
+7.Which method the servlet can use to determine whether the asynchronous process is supported or not?
+a.isAsyncSupported()
+b.isAsyncSupport()
+c.AsyncSupported()
+d.IsAsyncSupport()
+
+8.Below is the AJAX code to display the output after processing
+function getInfo(){  
+if(request.readyState==4){  
+ val=request.responseText;  
+document.getElement()=val;  
+}  
+It has error, identify the error  in the code
+
+a.function getInfo(){  
+if(request.readyState==4){  
+var val=request.responseText;  
+document.getElementById('val').innerHTML=val;  
+}  
+b.function getInfo(){  
+if(request.readyState==3){  
+var val=request.responsetext;  
+document.getElementById('val').innerHTML=val;  
+}  
+c.function getInfo(){  
+if(request.readyState==4){  
+var val=request.responseText;  
+document.getElementById(val).innerHTML=val;  
+}  
+d.function getInfo(){  
+if(request.readyState==3){  
+var val=request.responseText;  
+document.getElement('val').innerHTML=val;  
+}  
+9._________ sends the request to the server which used for GET.
+a.send(String)
+b.send()
+c.getSend()
+d.sendData()
+
+10.Which value of the readyState tells that the request is recieved.
+a.0
+b.2
+c.1
+d.4
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Chapter-10
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.______________ is performed by providing invalid input to an application.
+a.Weak authenctication mechanism
+b.Injection attacks
+c.Denial of service
+d.Scripting attacks
+
+2.______________ is a type of attack in which an attacker attempts to prevent authorized users from accessing resources.
+a.Authorization mechanism
+b.DenialOfService
+c.Authentication mechanism
+d.XSS Attacks
+
+3.__________________ is the most widely used authentication technique in web applications.
+a.Basic authentication
+b.Form-based authentication
+c.Digest authentication
+d.Client authentication
+	
+4._____________ refers to an entity that is identifiable and can be authenticated by the authentication mechanism.
+a.Role
+b.User
+c.Principal
+d.Admin
+
+5._______________ refers to the categories under which principals are classfied.
+a.Roles
+b.Authorized Users
+c.Admin
+d.Users
+
+6.________________ returns a boolean  value that indicates whether a authenticated user belongs to specific role.
+a.boolean isUserInRole(String role);
+b.boolean isUserinrole(String role);
+c.boolean IsUserInRole(String role);
+d.boolean isUserInRoles(string role);
+
+7.Identify the correct code which provides access only to admin logins to access the NewServlet
+a. <security-constraint>
+        <display-name>Constraint1</display-name>
+         <url-pattern>/NewServlet</url-pattern>
+        <web-resource-collection>
+            <web-resource-name>admin</web-resource-name>
+            <description/>
+   	</web-resource-collection>
+        <auth-constraints>
+            <description/>
+            <role>admin</role>
+        </auth-constraints>
+    </security-constraint>
+b. <security-constraint>
+        <display-name>Constraint1</display-name>
+        <web-resource-collection>
+            <web-resource>admin</web-resource>
+            <description/>
+            <url-pattern>/NewServlet</url-pattern>
+        </web-resource-collection>
+</security-constraint>
+        <auth-constraint>
+            <description/>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    
+c. <security-constraint>
+        <display-name>Constraint1</display-name>
+        <web-resource-collection>
+            <web-resource>admin</web-resource>
+            <description/>
+            <url-pattern>NewServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+d <security-constraint>
+        <display-name>Constraint1</display-name>
+        <web-resource-collection>
+            <web-resource-name>admin</web-resource-name>
+            <description/>
+            <url-pattern>/NewServlet</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+8.Below is the code snippet to implement a Form based authentication
+ <login-config>
+        <auth-method>form</auth-method>
+        <realms-name>admin</realms-name>
+        <form-login-config>
+            <form-login>/login.html</form-login>
+            <form-error>/Error.html</form-error>
+        </form-login-config>
+    </login-config>
+It is having some errors identify the correct
+a.<login-config>
+        <auth-method>form</auth-method>
+        <realms-name>admin</realms-name>
+        <form-login-config>
+            <form-login>/login.html</form-login>
+            <form-error-page>/Error.html</form-error-page>
+        </form-login-config>
+    </login-config>
+b.<login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>admin</realm-name>
+        <form-login>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/Error.html</form-error-page>
+        </form-login>
+    </login-config>
+c.<login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>admin</realm-name>
+        <form-login-config>
+            <form:login-page>/login.html</form-login-page>
+            <form:error-page>/Error.html</form-error-page>
+        </form-login-config>
+    </login-config>
+d<login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>admin</realm-name>
+        <form-login-config>
+            <form-login-page>/login.html</form-login-page>
+            <form-error-page>/Error.html</form-error-page>
+        </form-login-config>
+    </login-config>
+9.Identify the correct code snippet that allows only Sam and John to have Admin rights.
+
+a.<security-role>
+	<role-name>Admin</role-name>
+</security-role>
+<security-role-mapping>	
+	<role-name>Admin</role-name>
+	<principal-name>Sam</principal-name>
+	<principal-name>John</principal-name>
+  </security-role-mapping>
+b.<security-role>
+	<role-name>Admin</role-name>
+</security-role>
+<security-role>
+	<role-name>Admin</role-name>
+	<principals-name>Sam</principals-name>
+	<principals-name>John</principals-name>
+  </security-role>
+c.<security-role>
+	<role-name>Admin</role-name>
+<security-mapping>	
+	<role>Admin</role>
+	<principal-name>Sam</principal-name>
+	<principal-name>John</principal-name>
+  </security-mapping>
+</security-role>
+d.<security-role>
+	<role-name>Admin</role-name>
+
+<security-roles-mapping>	
+	<role-name>Admin</role-name>
+	<principal-name>Sam</principal-name>
+	<role-name>Admin</role-name>
+	<principal-name>John</principal-name>
+  </security-roles-mapping>
+</security-role>
+
+10.______________is a framework that is designed performing authentication and authorization tasks in Java applications in a plug and play manner.
+a.JAAS
+b.Form based
+c.Security
+d.Client Certificate
+
